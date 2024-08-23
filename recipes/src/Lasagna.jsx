@@ -27,14 +27,26 @@ function getSteps() {
     'Let the lasagna rest before serving.',
   ];
 
-  const each_step = steps.map((each) => <li>{each}</li>);
+  const each_step = steps.map((each) => <li key={each}>{each}</li>);
 
   return each_step;
 }
 
+function returnToMain() {
+  const recipes = document.querySelectorAll('.recipes');
+
+  recipes.forEach((recipe) => {
+    if (recipe.id == 'main') {
+      recipe.classList.remove('hide');
+    } else {
+      recipe.classList.add('hide');
+    }
+  });
+}
+
 export default function Lasagna() {
   return (
-    <div className="hide">
+    <div id="lasagna" className="recipes hide">
       <h1>Lasagna Recipe</h1>
       <img src={lasagna} alt="lasagna" width="500px" />
       <h2>Description</h2>
@@ -48,7 +60,10 @@ export default function Lasagna() {
       <h2>Ingredients</h2>
       <ul>{getIngredients()}</ul>
       <h2>Steps</h2>
-      <ul>{getSteps()}</ul>
+      <ol>{getSteps()}</ol>
+      <button className="return" onClick={returnToMain}>
+        return to main page
+      </button>
     </div>
   );
 }
