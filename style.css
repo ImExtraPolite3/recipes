@@ -76,6 +76,10 @@ a {
     margin: auto;
   }
 
+  .content {
+    align-items: flex-end;
+  }
+
   #recipes {
     width: 95%;
     display: grid;
@@ -88,7 +92,6 @@ a {
   }
 
   .move-button {
-    position: relative;
     display: flex;
     justify-content: end;
   }
