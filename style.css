@@ -5,8 +5,12 @@
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+h1 {
+  font-size: 2.5rem;
+  margin: 10px 0 20px 0;
+}
+
 #container {
-  margin: 30px 0;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -14,21 +18,22 @@
 
 .recipe-link {
   color: black;
-  width: min(75%, 450px);
+  width: min(95%, 450px);
   margin: auto;
   text-decoration: none;
   transition: transform 1s;
+  border-radius: 10px;
+  border-top: solid #ffca00 5px;
+  box-shadow: 0 0 10px 5px lightgray;
 }
 
 .recipe-link:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 10px 5px lightgray;
 }
 
-/* .recipe-link > div {
-  width: 90%;
-  margin: auto;
-} */
+.recipe-link > div {
+  padding: 10px 10px 20px 10px;
+}
 
 .recipe-link > div > h2,
 .recipe-link > div > p {
@@ -38,6 +43,10 @@
 
 .recipe-link > div > h2 {
   margin-top: 10px;
+}
+
+.recipe-link > div > p {
+  color: #666666;
 }
 
 .recipe-link > div > hr {
@@ -50,4 +59,31 @@
 
 .recipe-link > div > img {
   width: 100%;
+}
+
+@media (min-width: 425px) {
+  h1 {
+    margin-left: 20px;
+  }
+
+  #container {
+    width: min(80%, 450px);
+    margin: auto;
+  }
+}
+
+@media (min-width: 600px) {
+  #container {
+    width: min(95%, 800px);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (min-width: 840px) {
+  #container {
+    width: min(80%);
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
